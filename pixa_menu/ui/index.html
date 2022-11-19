@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    </head>
+    <body>
+        <img id="cursorPointer" src="assets/cursor.png">
+        <a class="crosshair" href="#">X</a>
+        
+        <ul class="menu">
+
+        </ul>
+
+
+        <script src="script.js" type="text/javascript"></script>
+        <script>
+            $(document).keyup(function(e) {
+          if (e.keyCode === 27) {
+              $(".crosshair").removeClass('fadeIn').removeClass('active');
+               $(".menu").removeClass('fadeIn');
+               $(".menu").empty();
+  $.post('http://pixa_menu/disablenuifocus', JSON.stringify({
+    nuifocus: false
+  }));
+          }
+      });
+      </script>
+    </body>
+</html>

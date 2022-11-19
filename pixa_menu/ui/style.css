@@ -1,0 +1,200 @@
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+
+  @font-face {
+    font-family: harmonia;
+    src: url('fonts/HarmoniaSansProCyr-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: harmonia-bold;
+    src: url('fonts/HarmoniaSansProCyr-Bold.ttf');
+  }
+  
+  @font-face {
+    font-family: harmonia-light;
+    src: url('fonts/HarmoniaSansProCyr-Light.ttf');
+  }
+
+
+body {
+  font-family: harmonia;
+
+  overflow: hidden;
+  height: 100%; }
+
+a {
+  display: block;
+  text-decoration: none; }
+
+.crosshair {
+  opacity: 0; 
+}
+
+#cursorPointer {
+
+  z-index: 999999;
+  display: none; 
+}
+
+.menu i {
+  font-size: 125%;
+  font-weight: bold;
+  background: linear-gradient(-90deg, #ffd154, #ff9900,#ffa600,#ff8534);
+  background-size: 300% 400%;
+    animation: gradient 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.crosshair {
+  text-align: center;
+  width: 1px;
+  height: 1px;
+  border-radius: 5px;
+  background: #d2d2d2;
+  box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  position: absolute;
+  top: calc(50%);
+  left: calc(50% );
+  -webkit-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  z-index: 200; 
+  transition: 300ms;
+}
+
+.crosshair.fadeIn {
+  width: 4px;
+  height: 4px;
+  top: calc(50%);
+  left: calc(50% );
+  z-index: 200; 
+}
+
+.crosshair.active {
+  width: 50px;
+  height: 50px;
+  font-size: 200%;
+  margin: auto;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-family: harmonia-bold;
+  color: white;
+  top: calc(50% - 25px);
+  left: calc(50% - 30px);
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.crosshair.active:hover {
+        background: linear-gradient(-45deg, #FF7070, #FF3636); 
+        background-size: 400%;
+        -webkit-animation: Gradient 2s ease infinite;
+      -moz-animation: Gradient 2s ease infinite;
+  animation: Gradient 3s ease infinite;
+  box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  -webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  -moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.73);
+  transform: scale(1.05);
+}
+
+.menu {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  top: 0;
+  z-index: 0; }
+  .menu li {
+    list-style: none;
+    width: 50%;
+      
+    line-height: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .menu li p {
+      font-size: 100%;
+      display: inline-block;
+      text-transform: uppercase;
+      box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.85);
+		-webkit-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.85);
+		-moz-box-shadow: 0px 1px 9px 0px rgba(0,0,0,0.85);
+      color: white;
+      font-weight: 100;
+      font-family: harmonia-bold;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+      letter-spacing: 1px;
+      padding: 20px 30px 20px 30px;
+      margin: 10px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      will-change: transform; }
+      .menu li p:hover {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1); }
+      .menu li p .emoji {
+        font-size: 22px;
+        margin-right: 5px;
+        display: inline-block;
+        vertical-align: middle; }
+    .menu li:nth-child(odd) {
+      text-align: right;
+      right: 60px;
+      -webkit-transform-origin: right center;
+      -ms-transform-origin: right center;
+      transform-origin: right center; }
+    .menu li:nth-child(even) {
+      left: 60px;
+      -webkit-transform-origin: left center;
+      -ms-transform-origin: left center;
+      transform-origin: left center; }
+    .menu li:nth-child(1), .menu li:nth-last-child(2) {
+       }
+    .menu li:nth-child(2), .menu li:nth-last-child(1) {
+      }
+
+.fadeIn {
+  opacity: 1;
+  z-index: 10; }
+
+/* GRADIENT */
+
+/* GRADIENT */
+
+
